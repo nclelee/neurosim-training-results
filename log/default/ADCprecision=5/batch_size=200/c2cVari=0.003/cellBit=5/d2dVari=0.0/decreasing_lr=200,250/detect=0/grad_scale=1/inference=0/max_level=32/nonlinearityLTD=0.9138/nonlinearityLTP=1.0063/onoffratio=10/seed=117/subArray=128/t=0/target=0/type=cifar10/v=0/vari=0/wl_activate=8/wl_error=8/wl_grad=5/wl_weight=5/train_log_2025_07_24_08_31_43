@@ -1,0 +1,279 @@
+=================FLAGS==================
+type: cifar10
+batch_size: 200
+epochs: 32
+grad_scale: 1
+seed: 117
+log_interval: 100
+test_interval: 1
+logdir: /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5
+decreasing_lr: 200,250
+wl_weight: 5
+wl_grad: 5
+wl_activate: 8
+wl_error: 8
+inference: 0
+onoffratio: 10
+cellBit: 5
+subArray: 128
+ADCprecision: 5
+vari: 0
+t: 0
+v: 0
+detect: 0
+target: 0
+nonlinearityLTP: 1.0063
+nonlinearityLTD: 0.9138
+max_level: 32
+d2dVari: 0.0
+c2cVari: 0.003
+========================================
+Sequential(
+  (0): QConv2d(3, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (1): ReLU()
+  (2): QConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (3): ReLU()
+  (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (5): QConv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (6): ReLU()
+  (7): QConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (8): ReLU()
+  (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (10): QConv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (11): ReLU()
+  (12): QConv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (13): ReLU()
+  (14): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+)
+Sequential(
+  (0): QLinear(in_features=8192, out_features=1024, bias=False)
+  (1): ReLU(inplace=True)
+  (2): QLinear(in_features=1024, out_features=10, bias=False)
+)
+decreasing_lr: [200, 250]
+training phase
+Train Epoch: 0 [20000/50000] Loss: 80.984024 Acc: 0.3550 lr: 1.00e+00
+Train Epoch: 0 [40000/50000] Loss: 73.447403 Acc: 0.3800 lr: 1.00e+00
+Elapsed 989.58s, 989.58 s/epoch, 3.96 s/batch, ets 30677.08s
+testing phase
+	Epoch 0 Test set: Average loss: 71.2733, Accuracy: 4417/10000 (44%)
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-0.pth
+training phase
+Train Epoch: 1 [20000/50000] Loss: 74.037979 Acc: 0.3900 lr: 1.00e+00
+Train Epoch: 1 [40000/50000] Loss: 69.575119 Acc: 0.4200 lr: 1.00e+00
+Elapsed 2186.46s, 1093.23 s/epoch, 4.37 s/batch, ets 32796.97s
+testing phase
+	Epoch 1 Test set: Average loss: 65.0218, Accuracy: 4935/10000 (49%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-0.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-1.pth
+training phase
+Train Epoch: 2 [20000/50000] Loss: 68.457542 Acc: 0.4700 lr: 1.00e+00
+Train Epoch: 2 [40000/50000] Loss: 61.067619 Acc: 0.5800 lr: 1.00e+00
+Elapsed 3425.84s, 1141.95 s/epoch, 4.57 s/batch, ets 33116.49s
+testing phase
+	Epoch 2 Test set: Average loss: 55.4233, Accuracy: 6068/10000 (61%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-1.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-2.pth
+training phase
+Train Epoch: 3 [20000/50000] Loss: 56.047810 Acc: 0.5700 lr: 1.00e+00
+Train Epoch: 3 [40000/50000] Loss: 54.870766 Acc: 0.6050 lr: 1.00e+00
+Elapsed 4721.08s, 1180.27 s/epoch, 4.72 s/batch, ets 33047.58s
+testing phase
+	Epoch 3 Test set: Average loss: 52.9705, Accuracy: 6138/10000 (61%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-2.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-3.pth
+training phase
+Train Epoch: 4 [20000/50000] Loss: 50.089794 Acc: 0.6300 lr: 1.00e+00
+Train Epoch: 4 [40000/50000] Loss: 51.470203 Acc: 0.6250 lr: 1.00e+00
+Elapsed 5961.19s, 1192.24 s/epoch, 4.77 s/batch, ets 32190.43s
+testing phase
+	Epoch 4 Test set: Average loss: 44.3573, Accuracy: 6915/10000 (69%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-3.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-4.pth
+training phase
+Train Epoch: 5 [20000/50000] Loss: 49.696705 Acc: 0.6250 lr: 1.00e+00
+Train Epoch: 5 [40000/50000] Loss: 44.301868 Acc: 0.6600 lr: 1.00e+00
+Elapsed 7157.71s, 1192.95 s/epoch, 4.77 s/batch, ets 31016.73s
+testing phase
+	Epoch 5 Test set: Average loss: 47.2633, Accuracy: 6587/10000 (66%)
+training phase
+Train Epoch: 6 [20000/50000] Loss: 38.442955 Acc: 0.7700 lr: 1.00e+00
+Train Epoch: 6 [40000/50000] Loss: 37.545940 Acc: 0.7600 lr: 1.00e+00
+Elapsed 8367.82s, 1195.40 s/epoch, 4.78 s/batch, ets 29885.07s
+testing phase
+	Epoch 6 Test set: Average loss: 40.9496, Accuracy: 7205/10000 (72%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-4.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-6.pth
+training phase
+Train Epoch: 7 [20000/50000] Loss: 40.892048 Acc: 0.6950 lr: 1.00e+00
+Train Epoch: 7 [40000/50000] Loss: 41.065392 Acc: 0.7150 lr: 1.00e+00
+Elapsed 9588.45s, 1198.56 s/epoch, 4.79 s/batch, ets 28765.34s
+testing phase
+	Epoch 7 Test set: Average loss: 37.5915, Accuracy: 7437/10000 (74%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-6.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-7.pth
+training phase
+Train Epoch: 8 [20000/50000] Loss: 39.508949 Acc: 0.7300 lr: 1.00e+00
+Train Epoch: 8 [40000/50000] Loss: 37.642933 Acc: 0.7500 lr: 1.00e+00
+Elapsed 10824.64s, 1202.74 s/epoch, 4.81 s/batch, ets 27662.97s
+testing phase
+	Epoch 8 Test set: Average loss: 35.2278, Accuracy: 7640/10000 (76%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-7.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-8.pth
+training phase
+Train Epoch: 9 [20000/50000] Loss: 41.498169 Acc: 0.7200 lr: 1.00e+00
+Train Epoch: 9 [40000/50000] Loss: 36.027901 Acc: 0.7800 lr: 1.00e+00
+Elapsed 12019.31s, 1201.93 s/epoch, 4.81 s/batch, ets 26442.49s
+testing phase
+	Epoch 9 Test set: Average loss: 37.1122, Accuracy: 7445/10000 (74%)
+training phase
+Train Epoch: 10 [20000/50000] Loss: 30.771526 Acc: 0.7900 lr: 1.00e+00
+Train Epoch: 10 [40000/50000] Loss: 35.845154 Acc: 0.7650 lr: 1.00e+00
+Elapsed 13216.95s, 1201.54 s/epoch, 4.81 s/batch, ets 25232.35s
+testing phase
+	Epoch 10 Test set: Average loss: 35.6184, Accuracy: 7577/10000 (76%)
+training phase
+Train Epoch: 11 [20000/50000] Loss: 32.196472 Acc: 0.7950 lr: 1.00e+00
+Train Epoch: 11 [40000/50000] Loss: 36.259781 Acc: 0.7350 lr: 1.00e+00
+Elapsed 14422.48s, 1201.87 s/epoch, 4.81 s/batch, ets 24037.47s
+testing phase
+	Epoch 11 Test set: Average loss: 32.4253, Accuracy: 7820/10000 (78%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-8.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-11.pth
+training phase
+Train Epoch: 12 [20000/50000] Loss: 28.882946 Acc: 0.8500 lr: 1.00e+00
+Train Epoch: 12 [40000/50000] Loss: 35.286655 Acc: 0.7950 lr: 1.00e+00
+Elapsed 15640.28s, 1203.10 s/epoch, 4.81 s/batch, ets 22858.87s
+testing phase
+	Epoch 12 Test set: Average loss: 34.8795, Accuracy: 7708/10000 (77%)
+training phase
+Train Epoch: 13 [20000/50000] Loss: 31.683224 Acc: 0.8100 lr: 1.00e+00
+Train Epoch: 13 [40000/50000] Loss: 33.319565 Acc: 0.7850 lr: 1.00e+00
+Elapsed 16829.36s, 1202.10 s/epoch, 4.81 s/batch, ets 21637.75s
+testing phase
+	Epoch 13 Test set: Average loss: 32.1555, Accuracy: 7886/10000 (79%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-11.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-13.pth
+training phase
+Train Epoch: 14 [20000/50000] Loss: 33.106567 Acc: 0.7750 lr: 1.00e+00
+Train Epoch: 14 [40000/50000] Loss: 33.013496 Acc: 0.7700 lr: 1.00e+00
+Elapsed 35957.79s, 2397.19 s/epoch, 9.59 s/batch, ets 40752.16s
+testing phase
+	Epoch 14 Test set: Average loss: 30.6868, Accuracy: 7956/10000 (80%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-13.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-14.pth
+training phase
+Train Epoch: 15 [20000/50000] Loss: 28.256741 Acc: 0.8050 lr: 1.00e+00
+Train Epoch: 15 [40000/50000] Loss: 31.737457 Acc: 0.8050 lr: 1.00e+00
+Elapsed 37164.78s, 2322.80 s/epoch, 9.29 s/batch, ets 37164.78s
+testing phase
+	Epoch 15 Test set: Average loss: 31.5543, Accuracy: 7928/10000 (79%)
+training phase
+Train Epoch: 16 [20000/50000] Loss: 34.433525 Acc: 0.7600 lr: 1.00e+00
+Train Epoch: 16 [40000/50000] Loss: 30.133476 Acc: 0.8100 lr: 1.00e+00
+Elapsed 38350.44s, 2255.91 s/epoch, 9.02 s/batch, ets 33838.62s
+testing phase
+	Epoch 16 Test set: Average loss: 29.4978, Accuracy: 8053/10000 (81%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-14.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-16.pth
+training phase
+Train Epoch: 17 [20000/50000] Loss: 26.674801 Acc: 0.8200 lr: 1.00e+00
+Train Epoch: 17 [40000/50000] Loss: 31.451773 Acc: 0.7750 lr: 1.00e+00
+Elapsed 39674.50s, 2204.14 s/epoch, 8.82 s/batch, ets 30857.94s
+testing phase
+	Epoch 17 Test set: Average loss: 28.1686, Accuracy: 8201/10000 (82%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-16.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-17.pth
+training phase
+Train Epoch: 18 [20000/50000] Loss: 27.542658 Acc: 0.8550 lr: 1.00e+00
+Train Epoch: 18 [40000/50000] Loss: 31.956455 Acc: 0.8000 lr: 1.00e+00
+Elapsed 40998.68s, 2157.83 s/epoch, 8.63 s/batch, ets 28051.73s
+testing phase
+	Epoch 18 Test set: Average loss: 28.1418, Accuracy: 8204/10000 (82%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-17.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-18.pth
+training phase
+Train Epoch: 19 [20000/50000] Loss: 31.416819 Acc: 0.8000 lr: 1.00e+00
+Train Epoch: 19 [40000/50000] Loss: 31.623068 Acc: 0.7900 lr: 1.00e+00
+Elapsed 42366.04s, 2118.30 s/epoch, 8.47 s/batch, ets 25419.62s
+testing phase
+	Epoch 19 Test set: Average loss: 27.3793, Accuracy: 8255/10000 (83%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-18.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-19.pth
+training phase
+Train Epoch: 20 [20000/50000] Loss: 34.029854 Acc: 0.7750 lr: 1.00e+00
+Train Epoch: 20 [40000/50000] Loss: 28.561699 Acc: 0.7900 lr: 1.00e+00
+Elapsed 43673.86s, 2079.71 s/epoch, 8.32 s/batch, ets 22876.78s
+testing phase
+	Epoch 20 Test set: Average loss: 28.5064, Accuracy: 8165/10000 (82%)
+training phase
+Train Epoch: 21 [20000/50000] Loss: 26.727795 Acc: 0.8100 lr: 1.00e+00
+Train Epoch: 21 [40000/50000] Loss: 30.787489 Acc: 0.7750 lr: 1.00e+00
+Elapsed 45014.74s, 2046.12 s/epoch, 8.18 s/batch, ets 20461.25s
+testing phase
+	Epoch 21 Test set: Average loss: 30.4328, Accuracy: 8006/10000 (80%)
+training phase
+Train Epoch: 22 [20000/50000] Loss: 29.875330 Acc: 0.8100 lr: 1.00e+00
+Train Epoch: 22 [40000/50000] Loss: 23.384651 Acc: 0.8350 lr: 1.00e+00
+Elapsed 46361.22s, 2015.71 s/epoch, 8.06 s/batch, ets 18141.35s
+testing phase
+	Epoch 22 Test set: Average loss: 33.6537, Accuracy: 7716/10000 (77%)
+training phase
+Train Epoch: 23 [20000/50000] Loss: 34.111797 Acc: 0.7700 lr: 1.00e+00
+Train Epoch: 23 [40000/50000] Loss: 27.744322 Acc: 0.8200 lr: 1.00e+00
+Elapsed 47682.05s, 1986.75 s/epoch, 7.95 s/batch, ets 15894.02s
+testing phase
+	Epoch 23 Test set: Average loss: 28.0959, Accuracy: 8183/10000 (82%)
+training phase
+Train Epoch: 24 [20000/50000] Loss: 26.809214 Acc: 0.8550 lr: 1.00e+00
+Train Epoch: 24 [40000/50000] Loss: 27.149954 Acc: 0.8250 lr: 1.00e+00
+Elapsed 49033.15s, 1961.33 s/epoch, 7.85 s/batch, ets 13729.28s
+testing phase
+	Epoch 24 Test set: Average loss: 26.8759, Accuracy: 8221/10000 (82%)
+training phase
+Train Epoch: 25 [20000/50000] Loss: 26.784246 Acc: 0.8350 lr: 1.00e+00
+Train Epoch: 25 [40000/50000] Loss: 28.225552 Acc: 0.8300 lr: 1.00e+00
+Elapsed 50377.16s, 1937.58 s/epoch, 7.75 s/batch, ets 11625.50s
+testing phase
+	Epoch 25 Test set: Average loss: 27.7045, Accuracy: 8216/10000 (82%)
+training phase
+Train Epoch: 26 [20000/50000] Loss: 22.391239 Acc: 0.8700 lr: 1.00e+00
+Train Epoch: 26 [40000/50000] Loss: 26.589483 Acc: 0.8300 lr: 1.00e+00
+Elapsed 51656.00s, 1913.19 s/epoch, 7.65 s/batch, ets 9565.93s
+testing phase
+	Epoch 26 Test set: Average loss: 28.5554, Accuracy: 8066/10000 (81%)
+training phase
+Train Epoch: 27 [20000/50000] Loss: 27.283791 Acc: 0.8300 lr: 1.00e+00
+Train Epoch: 27 [40000/50000] Loss: 23.585545 Acc: 0.8500 lr: 1.00e+00
+Elapsed 52928.55s, 1890.31 s/epoch, 7.56 s/batch, ets 7561.22s
+testing phase
+	Epoch 27 Test set: Average loss: 27.3859, Accuracy: 8233/10000 (82%)
+training phase
+Train Epoch: 28 [20000/50000] Loss: 27.666393 Acc: 0.8150 lr: 1.00e+00
+Train Epoch: 28 [40000/50000] Loss: 26.978664 Acc: 0.8300 lr: 1.00e+00
+Elapsed 54270.80s, 1871.41 s/epoch, 7.49 s/batch, ets 5614.22s
+testing phase
+	Epoch 28 Test set: Average loss: 28.9345, Accuracy: 8092/10000 (81%)
+training phase
+Train Epoch: 29 [20000/50000] Loss: 24.770113 Acc: 0.8350 lr: 1.00e+00
+Train Epoch: 29 [40000/50000] Loss: 26.662819 Acc: 0.8300 lr: 1.00e+00
+Elapsed 55588.08s, 1852.94 s/epoch, 7.41 s/batch, ets 3705.87s
+testing phase
+	Epoch 29 Test set: Average loss: 26.6178, Accuracy: 8276/10000 (83%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-19.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-29.pth
+training phase
+Train Epoch: 30 [20000/50000] Loss: 28.051359 Acc: 0.8500 lr: 1.00e+00
+Train Epoch: 30 [40000/50000] Loss: 20.981619 Acc: 0.8600 lr: 1.00e+00
+Elapsed 56868.07s, 1834.45 s/epoch, 7.34 s/batch, ets 1834.45s
+testing phase
+	Epoch 30 Test set: Average loss: 25.3057, Accuracy: 8349/10000 (83%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-29.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=cifar10/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-30.pth
+training phase
+Train Epoch: 31 [20000/50000] Loss: 27.607162 Acc: 0.8150 lr: 1.00e+00
+Train Epoch: 31 [40000/50000] Loss: 22.781528 Acc: 0.8450 lr: 1.00e+00
+Elapsed 58159.53s, 1817.49 s/epoch, 7.27 s/batch, ets 0.00s
+testing phase
+	Epoch 31 Test set: Average loss: 28.4487, Accuracy: 8146/10000 (81%)
+Total Elapse: 58418.35, Best Result: 83.490%
