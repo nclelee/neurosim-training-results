@@ -128,6 +128,20 @@ elif args.type == 'cifar100':
     net = model.cifar100(args=args, logger=logger)  # if you have this
 
 elif args.type == 'mnist':
+    # use the loader you added to dataset.py
+    train_loader, test_loader = dataset.get_mnist(
+        batch_size  = args.batch_size,
+        train       = True,
+        val         = True,
+        data_root   = os.path.join(tempfile.gettempdir(), 'public_dataset', 'pytorch'),
+        num_workers = 1
+    )
+    # instantiate the small MNIST‐LeNet style model you added in model.py
+    net = model.mnist(args=args, logger=logger)
+
+
+"""
+elif args.type == 'mnist':
     from torchvision import datasets, transforms
     from torch.utils.data import DataLoader
 
@@ -145,7 +159,7 @@ elif args.type == 'mnist':
     test_loader  = DataLoader(test_ds,  batch_size=args.batch_size, shuffle=False, num_workers=1)
 
     net = model.cifar10(args=args, logger=logger)  # we reuse your CIFAR-10 model
-
+"""
 else:
     raise ValueError(f"Unsupported dataset type: {args.type}")
 #if args.cuda:

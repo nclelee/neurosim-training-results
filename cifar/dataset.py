@@ -77,7 +77,7 @@ def get_mnist(batch_size, data_root='/tmp/public_dataset/pytorch', train=True, v
         transforms.Resize(32),       # match CIFAR input size
         transforms.Grayscale(3),     # expand 1→3 channels
         transforms.ToTensor(),
-        transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5)),
+        transforms.Normalize((0.1307,)*3, (0.3081,)*3),
     ])
     loaders = []
     if train:
