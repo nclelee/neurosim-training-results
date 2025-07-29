@@ -1,0 +1,70 @@
+=================FLAGS==================
+type: mnist
+batch_size: 200
+epochs: 32
+grad_scale: 1
+seed: 117
+log_interval: 100
+test_interval: 1
+logdir: /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=mnist/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5
+decreasing_lr: 200,250
+wl_weight: 5
+wl_grad: 5
+wl_activate: 8
+wl_error: 8
+inference: 0
+onoffratio: 10
+cellBit: 5
+subArray: 128
+ADCprecision: 5
+vari: 0
+t: 0
+v: 0
+detect: 0
+target: 0
+nonlinearityLTP: 1.0063
+nonlinearityLTD: 0.9138
+max_level: 32
+d2dVari: 0.0
+c2cVari: 0.003
+========================================
+Sequential(
+  (0): QConv2d(3, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (1): ReLU()
+  (2): QConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (3): ReLU()
+  (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (5): QConv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (6): ReLU()
+  (7): QConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (8): ReLU()
+  (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (10): QConv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (11): ReLU()
+  (12): QConv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (13): ReLU()
+  (14): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+)
+Sequential(
+  (0): QLinear(in_features=8192, out_features=1024, bias=False)
+  (1): ReLU(inplace=True)
+  (2): QLinear(in_features=1024, out_features=10, bias=False)
+)
+decreasing_lr: [200, 250]
+training phase
+Train Epoch: 0 [20000/60000] Loss: 24.466064 Acc: 0.9400 lr: 1.00e+00
+Train Epoch: 0 [40000/60000] Loss: 7.104689 Acc: 0.9850 lr: 1.00e+00
+Elapsed 1461.63s, 1461.63 s/epoch, 4.87 s/batch, ets 45310.64s
+testing phase
+	Epoch 0 Test set: Average loss: 5.1611, Accuracy: 9908/10000 (99%)
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=mnist/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-0.pth
+training phase
+Train Epoch: 1 [20000/60000] Loss: 5.960888 Acc: 0.9750 lr: 1.00e+00
+Train Epoch: 1 [40000/60000] Loss: 3.685361 Acc: 1.0000 lr: 1.00e+00
+Elapsed 3204.11s, 1602.06 s/epoch, 5.34 s/batch, ets 48061.71s
+testing phase
+	Epoch 1 Test set: Average loss: 3.5899, Accuracy: 9915/10000 (99%)
+Removing old model /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=mnist/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-0.pth
+Saving model to /home/nicole/DNN_NeuroSim_V2.1/Training_pytorch/log/default/ADCprecision=5/batch_size=200/c2cVari=0.003/cellBit=5/d2dVari=0.0/decreasing_lr=200,250/detect=0/grad_scale=1/inference=0/max_level=32/nonlinearityLTD=0.9138/nonlinearityLTP=1.0063/onoffratio=10/seed=117/subArray=128/t=0/target=0/type=mnist/v=0/vari=0/wl_activate=8/wl_error=8/wl_grad=5/wl_weight=5/best-1.pth
+training phase
+Total Elapse: 3890.10, Best Result: 99.150%
