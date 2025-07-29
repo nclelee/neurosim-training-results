@@ -76,3 +76,5 @@ epoch,average loss,accuracy
 30.000000,25.305735,83.489998
 31.000000,28.448664,81.459999
 epoch,average loss,accuracy
+epoch,average loss,accuracy
+0.000000,5.161133,99.080002
