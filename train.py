@@ -150,6 +150,8 @@ else:
     raise ValueError(f"Unsupported dataset type: {args.type}")
 #if args.cuda:
 #    model.cuda()
+model = net
+
 
 optimizer = optim.SGD(model.parameters(), lr=1)
 
