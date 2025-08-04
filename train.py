@@ -21,9 +21,9 @@ import tempfile
 parser = argparse.ArgumentParser(description='PyTorch CIFAR-X Example')
 parser.add_argument(
     '--type',
-    choices=['cifar10', 'cifar100', 'mnist'],
+    choices=['cifar10','cifar100','mnist','fashionmnist'],
     default='cifar10',
-    help='dataset for training: cifar10, cifar100, or mnist'
+    help='dataset for training'
 )
 parser.add_argument('--batch_size', type=int, default=200, help='input batch size for training (default: 200)')
 parser.add_argument('--epochs', type=int, default=32, help='number of epochs to train (default: 32)')
@@ -109,7 +109,7 @@ torch.manual_seed(args.seed)
 #    torch.cuda.manual_seed(args.seed)
 
 # data loader and model
-assert args.type in ['cifar10', 'cifar100', 'mnist'], args.type
+assert args.type in ['cifar10', 'cifar100', 'mnist','fashionmnist'], args.type
 # select data loader + model
 if args.type == 'cifar10':
     train_loader, test_loader = dataset.get10(
@@ -137,29 +137,15 @@ elif args.type == 'mnist':
         num_workers = 1
     )
     # instantiate the small MNIST‐LeNet style model you added in model.py
-    net = model.mnist(args=args, logger=logger)
+    net = model.cifar10(args=args, logger=logger)
 
+elif args.type == 'fashionmnist':
+    train_loader, test_loader = dataset.get_fashionmnist(
+        batch_size=args.batch_size,
+        data_root=os.path.join(tempfile.gettempdir(),'public_dataset','pytorch'),
+        num_workers=1)
+    net = model.cifar10(args=args, logger=logger)  # same 2-conv→2-fc wrapper
 
-"""
-elif args.type == 'mnist':
-    from torchvision import datasets, transforms
-    from torch.utils.data import DataLoader
-
-    transform = transforms.Compose([
-        transforms.Resize(32),       # match CIFAR input size
-        transforms.Grayscale(3),     # expand 1 → 3 channels
-        transforms.ToTensor(),
-        transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5)),
-    ])
-    data_root = os.path.join(tempfile.gettempdir(), 'public_dataset','pytorch')
-    train_ds = datasets.MNIST(root=data_root, train=True,  download=True, transform=transform)
-    test_ds  = datasets.MNIST(root=data_root, train=False, download=True, transform=transform)
-
-    train_loader = DataLoader(train_ds, batch_size=args.batch_size, shuffle=True,  num_workers=1)
-    test_loader  = DataLoader(test_ds,  batch_size=args.batch_size, shuffle=False, num_workers=1)
-
-    net = model.cifar10(args=args, logger=logger)  # we reuse your CIFAR-10 model
-"""
 else:
     raise ValueError(f"Unsupported dataset type: {args.type}")
 #if args.cuda:

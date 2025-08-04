@@ -92,3 +92,25 @@ def get_mnist(batch_size, data_root='/tmp/public_dataset/pytorch', train=True, v
         ))
     # return single loader if only one requested, else a tuple
     return loaders[0] if len(loaders)==1 else tuple(loaders)
+
+
+def get_fashionmnist(batch_size, data_root='/tmp/public_dataset/pytorch', train=True, val=True, **kwargs):
+    root = os.path.expanduser(os.path.join(data_root, 'fashion-mnist'))
+    num_workers = kwargs.setdefault('num_workers', 1)
+    print(f"Building FashionMNIST data loader with {num_workers} workers")
+    transform = transforms.Compose([
+        transforms.Resize(32),         # make 32×32
+        transforms.Grayscale(3),       # replicate to 3 channels
+        transforms.ToTensor(),
+        transforms.Normalize((0.2860,)*3, (0.3530,)*3),  # official FMNIST mean/std
+    ])
+    loaders = []
+    if train:
+        loaders.append(DataLoader(
+            datasets.FashionMNIST(root, train=True,  download=True, transform=transform),
+            batch_size=batch_size, shuffle=True, num_workers=num_workers))
+    if val:
+        loaders.append(DataLoader(
+            datasets.FashionMNIST(root, train=False, download=True, transform=transform),
+            batch_size=batch_size, shuffle=False, num_workers=num_workers))
+    return loaders[0] if len(loaders)==1 else tuple(loaders)
